@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "imageUrl": "https://example.com/images/vehicle1.jpg",
+    "name": "Tesla Model 3",
+    "brand": "Tesla",
+    "price": 39999.99,
+    "mileage": 12000,
+    "year": "2023"
+  },
+  {
+    "id": 2,
+    "imageUrl": "https://example.com/images/vehicle2.jpg",
+    "name": "Ford Mustang",
+    "brand": "Ford",
+    "price": 0,
+    "mileage": 15000,
+    "year": "2022"
+  },
+  {
+    "id": 3,
+    "imageUrl": "https://example.com/images/vehicle3.jpg",
+    "name": "Chevrolet Camaro",
+    "brand": "Chevrolet",
+    "price": 42999.99,
+    "mileage": 10000,
+    "year": "2021"
+  },
+  {
+    "id": 4,
+    "imageUrl": "https://example.com/images/vehicle4.jpg",
+    "name": "BMW M3",
+    "brand": "BMW",
+    "price": 59999.99,
+    "mileage": 8000,
+    "year": "2023"
+  },
+  {
+    "id": 5,
+    "imageUrl": "https://example.com/images/vehicle5.jpg",
+    "name": "Audi A4",
+    "brand": "Audi",
+    "price": 37999.99,
+    "mileage": 25000,
+    "year": "2020"
+  }
+]
