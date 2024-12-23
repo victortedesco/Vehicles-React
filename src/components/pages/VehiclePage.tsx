@@ -34,9 +34,9 @@ export const VehiclePage = () => {
   }, []);
 
   return (
-    <>
+    <div id="container">
       <Header></Header>
-      <main>
+      <main className="flex flex-col grow items-center">
         {isLoading ? (
           <p className="text-center text-2xl">Loading...</p>
         ) : (
@@ -44,6 +44,6 @@ export const VehiclePage = () => {
         )}
       </main>
       <Footer></Footer>
-    </>
+    </div>
   );
 };

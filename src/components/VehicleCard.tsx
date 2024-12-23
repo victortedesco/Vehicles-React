@@ -1,51 +1,54 @@
-import { FC } from "react";
-import { Vehicle } from "../models/Vehicle";
+import { Vehicle } from "@/models/Vehicle";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "./ui/card";
 import { useNavigate } from "react-router-dom";
+import { cn } from "@/lib/utils";
 
-interface VehicleCardProps {
+interface VehicleCardProps extends React.ComponentProps<typeof Card> {
   vehicle: Vehicle;
 }
 
-interface VehicleCardListProps {
-  vehicles: Vehicle[];
-}
-
-export const VehicleCardList: FC<VehicleCardListProps> = ({ vehicles }) => {
-  return (
-    <>
-      <ol className="grid gap-2 grid-cols-1 md:grid-cols-3 lg:grid-cols-4 px-4">
-        {vehicles.map((x) => (
-          <li key={x.id}>
-            <VehicleCard vehicle={x}></VehicleCard>
-          </li>
-        ))}
-      </ol>
-    </>
-  );
+const formatPrice = (value: number): string => {
+  if (value == 0) return "CONTACT US!";
+  return "$" + value.toFixed(2);
 };
 
-export const VehicleCard: FC<VehicleCardProps> = ({ vehicle }) => {
+export const VehicleCard = ({ className, ...props }: VehicleCardProps) => {
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate(`/vehicle?id=${vehicle.id}`);
+  const viewVehicle = () => {
+    navigate(`/vehicle?id=${props.vehicle.id}`);
   };
 
   return (
-    <div className="flex flex-col cursor-pointer" onClick={handleClick}>
-      <img src={vehicle.imageUrl} alt={vehicle.name + " Image"}></img>
-      <div>
-        <p>
-          {vehicle.name} | {vehicle.brand}
-        </p>
-        <h1>
-          {vehicle.price != 0 ? (
-            `$ ${vehicle.price.toFixed(2)}`
-          ) : (
-            <b>CONTACT US!</b>
-          )}
-        </h1>
-      </div>
-    </div>
+    <>
+      <Card
+        className={cn("w-[190px]", className)} {...props}
+        onClick={viewVehicle}
+      >
+        <CardHeader>
+          <CardTitle>{props.vehicle.name}</CardTitle>
+          <CardDescription>
+            {props.vehicle.brand} | {props.vehicle.year}
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <img
+            className="size-32"
+            src={props.vehicle.imageUrl}
+            alt={props.vehicle.name + " Image"}
+          ></img>
+        </CardContent>
+        <CardFooter>
+          <p>{formatPrice(props.vehicle.price)}</p>
+        </CardFooter>
+      </Card>
+    </>
   );
 };

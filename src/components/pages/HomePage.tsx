@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Vehicle } from "../../models/Vehicle";
 import { Header } from "../Header";
 import { getAllVehicles } from "../../services/VehicleService";
-import { VehicleCardList } from "../VehicleCard";
 import { Footer } from "../Footer";
+import { VehicleCarousel } from "../VehicleCarousel";
 
 export const HomePage = () => {
   const [vehicles, setVehicles] = useState<Vehicle[]>([]);
@@ -21,12 +21,15 @@ export const HomePage = () => {
   }, []);
 
   return (
-    <>
+    <div id="container">
       <Header></Header>
-      <main>
-        <VehicleCardList vehicles={vehicles}></VehicleCardList>
+      <main className="flex flex-col grow items-center">
+        <VehicleCarousel
+          title="Highlights"
+          vehicles={vehicles}
+        ></VehicleCarousel>
       </main>
       <Footer></Footer>
-    </>
+    </div>
   );
 };
