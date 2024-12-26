@@ -6,42 +6,47 @@
     "brand": "Tesla",
     "price": 39999.99,
     "mileage": 12000,
-    "year": "2023"
+    "year": "2023",
+    "fuel": "Electric"
   },
   {
     "id": 2,
-    "imageUrl": "https://example.com/images/vehicle2.jpg",
+    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUY1CjtLpFlkSOyVw-A_5ANu0vCrUoZ40nMQ&s",
     "name": "Ford Mustang",
     "brand": "Ford",
     "price": 0,
     "mileage": 15000,
-    "year": "2022"
+    "year": "2022",
+    "fuel": "Gasoline"
   },
   {
     "id": 3,
-    "imageUrl": "https://example.com/images/vehicle3.jpg",
+    "imageUrl": "https://www.agoramotors.com.br/wp-content/uploads/2021/01/chevrolet-camaro-2021.png",
     "name": "Chevrolet Camaro",
     "brand": "Chevrolet",
     "price": 42999.99,
     "mileage": 10000,
-    "year": "2021"
+    "year": "2021",
+    "fuel": "Gasoline"
   },
   {
     "id": 4,
-    "imageUrl": "https://example.com/images/vehicle4.jpg",
-    "name": "BMW M3",
+    "imageUrl": "https://www.mensjournal.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cg_xy_center%2Cq_auto:good%2Cw_1200%2Cx_2606%2Cy_2042/MTk4Njg1Njk3Njc3MjA2ODkx/2023-bmw-m3-main.jpg",
+    "name": "BMW M3 Competition",
     "brand": "BMW",
     "price": 59999.99,
     "mileage": 8000,
-    "year": "2023"
+    "year": "2023",
+    "fuel": "Hybrid"
   },
   {
     "id": 5,
-    "imageUrl": "https://example.com/images/vehicle5.jpg",
+    "imageUrl": "https://ae01.alicdn.com/kf/S6e7f8ad64a184cce8adc9e675795395fV.png",
     "name": "Audi A4",
     "brand": "Audi",
     "price": 37999.99,
     "mileage": 25000,
-    "year": "2020"
+    "year": "2020",
+    "fuel": "Flex"
   }
 ]

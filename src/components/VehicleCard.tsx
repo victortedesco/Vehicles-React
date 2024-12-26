@@ -1,4 +1,4 @@
-import { Vehicle } from "@/models/Vehicle";
+import { formatPrice, Vehicle } from "@/models/Vehicle";
 import {
   Card,
   CardHeader,
@@ -14,11 +14,6 @@ interface VehicleCardProps extends React.ComponentProps<typeof Card> {
   vehicle: Vehicle;
 }
 
-const formatPrice = (value: number): string => {
-  if (value == 0) return "CONTACT US!";
-  return "$" + value.toFixed(2);
-};
-
 export const VehicleCard = ({ className, ...props }: VehicleCardProps) => {
   const navigate = useNavigate();
 
@@ -29,24 +24,24 @@ export const VehicleCard = ({ className, ...props }: VehicleCardProps) => {
   return (
     <>
       <Card
-        className={cn("w-[190px]", className)} {...props}
+        className={cn("w-[190px] h-[420px]", "flex flex-col cursor-pointer", className)} {...props}
         onClick={viewVehicle}
       >
-        <CardHeader>
+        <CardHeader className="min-h-32">
           <CardTitle>{props.vehicle.name}</CardTitle>
           <CardDescription>
             {props.vehicle.brand} | {props.vehicle.year}
           </CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="grow">
           <img
             className="size-32"
             src={props.vehicle.imageUrl}
             alt={props.vehicle.name + " Image"}
           ></img>
         </CardContent>
-        <CardFooter>
-          <p>{formatPrice(props.vehicle.price)}</p>
+        <CardFooter className="mt-auto">
+          <p className="text-xl font-bold">{formatPrice(props.vehicle.price)}</p>
         </CardFooter>
       </Card>
     </>

@@ -20,7 +20,7 @@ export const VehicleCarousel: FC<VehicleCarouselProps> = ({
 }) => {
   return (
     <div className="flex flex-col items-start gap-y-4">
-      <p className="font-bold text-xl">{title}</p>
+      <p className="font-bold text-2xl">{title}</p>
       <Carousel className="w-full max-w-5xl">
         <CarouselContent>
           {vehicles.map((v) => (
